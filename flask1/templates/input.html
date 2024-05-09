@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <body>
     <form action="/result" method="POST">
         <p>Name <input type='text' name='name'></p>
         <p>Student Number <input type='text' name='StudentNumber'></p>
-        <button type='submit' name='submit' value='submit'>submit</button>
     </form>
+
+    <form action="/Gender" method="post">
+        <label for="gender">Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br><br>
+        <input type="submit" value="Submit ">
+    </form>
+    
 </body>
 </html>
