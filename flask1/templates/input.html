@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <body>
     <form action="/result" method="POST">
-        <p>Name <input type='text' name='name'></p>
-        <p>Student Number <input type='text' name='StudentNumber'></p>
-    </form>
+        <p>Name <input type='text' Name='Name'></p>
 
-    <form action="/Gender" method="post">
-        <label for="gender">Gender</label><br>
-        <input type="radio" id="male" name="gender" value="male">
-        <label for="male">Male</label>
-        <input type="radio" id="female" name="gender" value="female">
-        <label for="female">Female</label><br><br>
-        <input type="submit" value="Submit ">
+        <p>Student Number <input type='text' name='StudentNumber'></p>
+
+        <label for="Gender">Gender</label><br>
+        <input type="radio" id="Male" name="Gender" value="Male">
+        <label for="Male">Male</label>
+        <input type="radio" id="Female" name="Gender" value="Female">
+        <label for="Female">Female</label><br><br>
+
+        <p>Major <input type='text' name='Major'></p>
+
+        <label for="language">language</label><br>
+        <input type="checkbox" id="Python" name="language" value="Python">
+        <label for="Python">Python</label>
+        <input type="checkbox" id="Java" name="language" value="Java">
+        <label for="Java">Java</label>
+        <input type="checkbox" id="HTML" name="language" value="HTML">
+        <label for="HTML">HTML</label>
+        <input type="checkbox" id="C++" name="language" value="C++">
+        <label for="C++">C++</label><br><br>
+        <input type="submit" value="Submit">
     </form>
-    
 </body>
 </html>
+

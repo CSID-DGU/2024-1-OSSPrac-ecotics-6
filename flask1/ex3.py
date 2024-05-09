@@ -10,8 +10,11 @@ def input():
 def result():
     if request.method =='POST':
        result=dict()
-       result['Name']=request.form.get('name')
-       result['Student Number']=request.form.get('StudentNumber')
+       result['Name']=request.form.get('Name')
+       result['StudentNumber']=request.form.get('StudentNumber')
+       result['Gender']=request.form.get('Gender')
+       result['Major']=request.form.get('Major')
+       result['laguages']=request.form.get('laguages')
        return render_template('result.html',result=result)
 
 if __name__ =='__main__':
