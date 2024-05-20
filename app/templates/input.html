@@ -2,17 +2,28 @@
 <html lang="en">
 <body>
     <form action="/result" method="POST">
-        <p>Name <input type='text' name='Name'></p>
+        <p>*Name <input type='text' name='Name'></p>
 
-        <p>Student Number <input type='text' name='StudentNumber'></p>
+        <p>*Student Number <input type='text' name='StudentNumber'></p>
+
+        <p>*Major <input type='text' name='Major'></p>
+
+        <p*>Email <input type='text' name='Email'>
+            @ <select name="EmailDomain" required>
+                <option value="">선택</option>
+                <option value="@gmail.com">gmail.com</option>
+                <option value="@yahoo.com">yahoo.com</option>
+                <option value="@outlook.com">outlook.com</option>
+                <option value="@naver.com">naver.com</option>
+                <option value="@daum.net">daum.net</option>
+            </select>
+        </p>
 
         <label for="Gender">Gender</label><br>
         <input type="radio" id="Male" name="Gender" value="Male">
         <label for="Male">Male</label>
         <input type="radio" id="Female" name="Gender" value="Female">
         <label for="Female">Female</label><br><br>
-
-        <p>Major <input type='text' name='Major'></p>
 
         <label for="language">language</label><br>
         <input type="checkbox" id="Python" name="language" value="Python">
@@ -27,4 +38,3 @@
     </form>
 </body>
 </html>
-
