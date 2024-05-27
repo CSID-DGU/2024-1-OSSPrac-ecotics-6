@@ -10,11 +10,6 @@ services: # 아래는 서비스 정의
       ports:  
          - "5000:80"
 
-   backapp:                   # service2의 명칭  
-      #서비스 빌드를 위한 정의 내용
-      build: ./backEnd
-      image: python:3
-
    my-bash:
       image: ubuntu:latest
       stdin_open: true
