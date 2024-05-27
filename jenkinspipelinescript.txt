@@ -1,0 +1,45 @@
+pipeline {
+    agent any  
+
+    triggers {
+        pollSCM('*/3 * * * *')
+    } 
+
+    environment {
+        DOCKER = credentials('dockerhub')
+    } 
+
+    stages {
+        stage('Prepare') {
+            steps {
+                git url: 'https://github.com/CSID-DGU/2024-1-OSSPrac-ecotics-6.git/',
+                    branch: 'main',
+                    credentialsId: 'github'
+            }
+        }
+
+        stage('Build Frontend') {
+            steps {
+                    sh 'ls -al' // 디버깅용: 디렉토리 내용 확인
+                    sh 'docker build -t jeongagyeong/frontapp:latest FrontEnd'
+            }
+        }
+
+        stage('Tag & Push Frontend') {
+            steps {
+                script {
+                    sh "docker tag jeongagyeong/frontapp:latest ${DOCKER_USR}/frontapp:${BUILD_NUMBER}"
+                    sh "docker login -u $DOCKER_USR -p $DOCKER_PSW"
+                    sh "docker push ${DOCKER_USR}/frontapp:latest"
+                    sh "docker push ${DOCKER_USR}/frontapp:${BUILD_NUMBER}"
+                }
+            }
+        }
+
+        stage('Deploy with Docker Compose') {
+            steps {
+                    sh 'docker-compose up -d'
+            }
+        }
+    }
+}
